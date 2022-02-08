@@ -1,39 +1,26 @@
-import React from "react";
-import { TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput, View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import Forget from './Pages/Forget';
+import Home from './Pages/Home';
+import Pediatrician from './Pages/Pediatrician';
+import Docterprofile from './Pages/Docterprofile';
+import './assets/style.css';
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default () =>(
+         <NavigationContainer>
+         <Stack.Navigator initialRouteName="Login">
+           <Stack.Screen name="Login" component={Login} />
+           <Stack.Screen name="Register" component={Register} />
+           <Stack.Screen name="Forget" component={Forget} />
+           <Stack.Screen name="Home" component={Home} />
+           <Stack.Screen name="Pediatrician" component={Pediatrician} />
+           <Stack.Screen name="Docterprofile" component={Docterprofile} />
+         </Stack.Navigator>
+       </NavigationContainer>
+      
+);
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.row}>
-        <View style={styles.col}>
-          <text>India</text>
-        </View>
-        <View style={styles.col2}>
-          <text>India</text>
-        </View>
-      </View>
-    </View>
-
-  );
-}
-
-const styles = {
-  container: {
-    flex: 1,
-  },
-  row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  col: {
-    width: '50%',
-    textAlign: 'center'
-  },
-  col2: {
-    width: '50%',
-    textAlign: 'right',
-    paddingRight: '10px',
-  }
-
-};

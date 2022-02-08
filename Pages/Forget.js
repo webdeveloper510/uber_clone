@@ -1,19 +1,16 @@
 import React from "react";
-import { TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput, View, Text } from 'react-native';
-
-const image = { uri: "https://www.pngitem.com/pimgs/m/700-7009042_clip-art-freeuse-download-go-nurse-best-nursing.png" };
-export default function App() {
+import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
+const image = { uri: require('../assets/background.png') };
+function Forget({ navigation }) {
   const [text, onChangeText] = React.useState(null);
-  const [email, onChangeEmail] = React.useState(null);
-  const [Password, onChangePassword] = React.useState(null);
-  const [number, onChangeNumber] = React.useState(null);
   return (
     <View style={styles.container}>
+       
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <View style={styles.overlay}>
-          <Image
+        <Image
             style={styles.tinyLogo}
-            source={require('./assets/logo.png')}
+            source={require('../assets/logo1.png')}
           />
           <View style={{ marginVertical: 80 }}></View>
           <h3 style={styles.bodytext}>Reset Password</h3>
@@ -28,10 +25,10 @@ export default function App() {
           <TouchableOpacity
             style={styles.button}
           >
-            <Text style={{ color: 'white', fontSize: 26 }}>Submit</Text>
+            <Text style={{ color: 'white', fontSize: 26,letterSpacing: 1  }}>Submit</Text>
           </TouchableOpacity>
         </View>
-        <p></p>
+
       </ImageBackground>
     </View>
 
@@ -41,6 +38,9 @@ export default function App() {
 const styles = {
   container: {
     flex: 1,
+  },
+  ancer:{ 
+    fontSize:'25px'
   },
   image: {
     flex: 1,
@@ -53,14 +53,20 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#337ab7",
     padding: 17,
-    height: 60,
+    height: 67,
     borderRadius: 30,
-    marginTop: 50
+    marginTop: 24
   },
   bodytext: {
-    fontSize: 24,
-    marginTop: 10,
+    fontSize: 29,
+    marginTop: 48,
     textAlign: 'center',
+    color:'#000000',
+    letterSpacing: 2
+  },
+  forget: {
+    textAlign: 'center',
+    letterSpacing: 2
   },
   input: {
     height: 56,
@@ -70,12 +76,13 @@ const styles = {
     fontSize: 26,
     textAlign: 'center',
     color: 'black',
-    backgroundColor: '#ffff',
+    backgroundColor: 'white',
     padding: 10,
   },
   overlay: {
     flex: 1,
     padding: 30,
-    backgroundColor: "#726f6f63"
+    background:'linear-gradient(2deg, #000000c7, #ffffff00)'
   }
 };
+export default Forget

@@ -1,25 +1,27 @@
 import React from "react";
-import { TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput, View, Text } from 'react-native';
-
-const image = { uri: "https://www.pngitem.com/pimgs/m/700-7009042_clip-art-freeuse-download-go-nurse-best-nursing.png" };
-export default function Login() {
+import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
+const image = { uri: require('../assets/background.png') };
+function Login({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
   return (
-    <View style={styles.container}>
+
+    <View  style={styles.container}>
+     
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <View style={styles.overlay}>
+      <View
+      style={styles.overlay}>
           <Image
             style={styles.tinyLogo}
-            source={require('./assets/logo.png')}
+            source={require('../assets/logo1.png')}
           />
-          <View style={{ marginVertical: 80 }}></View>
-          <h3 style={styles.bodytext}>Login in your account</h3>
+          <View style={{ marginVertical: 40 }}></View>
+          <h3 style={styles.bodytext}>Sign in your Account</h3>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
             value={text}
-            placeholderTextColor="white"
+            placeholderTextColor="black"
             placeholder="Email"
             keyboardType="numeric"
           />
@@ -28,23 +30,35 @@ export default function Login() {
             onChangeText={onChangeNumber}
             value={number}
             secureTextEntry={true}
-            placeholderTextColor="white"
+            placeholderTextColor="black"
             placeholder="Password"
             keyboardType="numeric"
           />
           <TouchableOpacity
             style={styles.forget}
+               onPress={() => navigation.navigate('Forget')}
           >
-            <Text style={{ color: 'black' }}>Forget Password ?</Text>
+            <Text style={{ color: 'white',fontFamily:"Roboto Condensed", fontSize:'23px' }}>Forget Password ?</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
+            onPress={() => navigation.navigate('Home')}
           >
-            <Text style={{ color: 'white', fontSize: 26 }}>Login</Text>
+            <Text style={{ color: 'white', fontSize: 26,fontFamily:"Roboto Condensed", letterSpacing: 1 }}>Sign In</Text>
           </TouchableOpacity>
-        </View>
-        <p></p>
+       
+       
+       <p style={{textAlign:'center', letterSpacing: 1,  marginTop:'62px', fontSize:'20px',color: 'white', fontWeight: 500, display:'flex',justifyContent:'center'}}>Or Sign up with  <TouchableOpacity
+            style={styles.ancer}
+               onPress={() => navigation.navigate('Register')}
+          >
+            <Text style={{ fontSize:'20px', letterSpacing: 1,color: '#337ab7',fontFamily:"Roboto Condensed", fontWeight: 600,paddingLeft:'10px', }}>Register</Text>
+          </TouchableOpacity></p>
+       
+          
+       </View>
       </ImageBackground>
+   
     </View>
 
   );
@@ -53,6 +67,10 @@ export default function Login() {
 const styles = {
   container: {
     flex: 1,
+  },
+  ancer:{
+   
+    fontSize:'25px'
   },
   image: {
     flex: 1,
@@ -65,17 +83,20 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#337ab7",
     padding: 17,
-    height: 60,
+    height: 67,
     borderRadius: 30,
-    marginTop: 50
+    marginTop: 24
   },
   bodytext: {
-    fontSize: 24,
-    marginTop: 10,
+    fontSize: 29,
+    marginTop: 48,
     textAlign: 'center',
+    color:'#000000',
+    letterSpacing: 2
   },
   forget: {
-    textAlign: 'right',
+    textAlign: 'center',
+    letterSpacing: 2
   },
   input: {
     height: 56,
@@ -83,13 +104,16 @@ const styles = {
     borderColor: 'white',
     borderRadius: 30,
     fontSize: 26,
+    fontFamily:"Roboto Condensed",
     textAlign: 'center',
-    color: 'white',
-    backgroundColor: '#cbc5c5d4',
+    color: 'black',
+    backgroundColor: 'white',
     padding: 10,
   },
   overlay: {
     flex: 1,
-    padding: 30
+    padding: 30,
+    background:'linear-gradient(2deg, #000000c7, #ffffff00)'
   }
 };
+export default Login;
