@@ -12,10 +12,10 @@ function Home({ navigation }) {
     <View style={styles.container}>
       <View style={styles.row}>
         <View style={styles.col}>
-          <text style={styles.location}>{myIcon1} India</text>
+          <Text style={styles.location}>{myIcon1} India</Text>
         </View>
         <View style={styles.col2}>
-          <text>{myIcon}</text>
+          <Text>{myIcon}</Text>
         </View>
       </View>
       <TextInput
@@ -27,7 +27,7 @@ function Home({ navigation }) {
             keyboardType="numeric"
           />
           <View style={styles.card}>
-            <h3>Find your doctor by speciality</h3>
+            <Text>Find your doctor by speciality</Text>
 
             <TouchableOpacity
             style={styles.button}
@@ -40,12 +40,12 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download.jpg')}
-              style={{ width: '98%', height: '100%',borderRadius:'20px' }}
+              style={{ width: '98%', height: '100%',borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>New York City DOHMH Public Health Laboratory</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>455 1st Avenue, New York , NY Unite.....</h5>
+               <Text>New York City DOHMH Public Health Laboratory</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
                <TouchableOpacity
             style={styles.CallNow}
             onPress={() => navigation.navigate('Pediatrician')}
@@ -58,12 +58,12 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download1.jpg')}
-              style={{ width: '98%', height: '100%',borderRadius:'20px' }}
+              style={{ width: '98%', height: '100%',borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>New York City DOHMH Public Health Laboratory</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>455 1st Avenue, New York , NY Unite.....</h5>
+               <Text>New York City DOHMH Public Health Laboratory</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
                <TouchableOpacity
             style={styles.CallNow}
             onPress={() => navigation.navigate('Pediatrician')}
@@ -76,12 +76,12 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download2.jpg')}
-              style={{ width: '98%', height: '100%',borderRadius:'20px' }}
+              style={{ width: '98%', height: '100%',borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>New York City DOHMH Public Health Laboratory</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>455 1st Avenue, New York , NY Unite.....</h5>
+               <Text>New York City DOHMH Public Health Laboratory</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
                <TouchableOpacity
             style={styles.CallNow}
             onPress={() => navigation.navigate('Pediatrician')}
@@ -107,7 +107,7 @@ const styles = {
   },
   CallNow: {
     borderColor:'blue',
-    borderWidth: '2px',
+    borderWidth: 2,
     borderRadius:10,
     width: 107,
     padding: 8,
@@ -121,34 +121,34 @@ const styles = {
   cardbody2: {
     width:'50%',
     foat:'left',
-    padding:'12px',
+    padding:12,
  },
  row1: {
   flexDirection: "row",
   flexWrap: "wrap",
-  borderRadius:'20px',
+  borderRadius:20,
   margin: 12,
   boxShadow:' 0 8px 16px 0 rgb(0 0 0 / 20%)',
 },
   row: {
     flexDirection: "row",
     flexWrap: "wrap",
-    padding:"10px"
+    padding:10
   },
   location:{
-    forntSize:'22px',
+    fontSize:22,
   },
   col: {
     width: '50%',
     textAlign: 'left',
-    paddingleft:'10px'
+    paddingleft:10
   },
   input: {
     height: 56,
     marginVertical: 12,
     marginHorizontal:12,
     borderColor: 'black',
-    borderWidth:'1px',
+    borderWidth:1,
     borderRadius: 5,
     fontSize: 16,
     paddingLeft:15,
@@ -160,7 +160,7 @@ const styles = {
   col2: {
     width: '50%',
     textAlign: 'right',
-    paddingRight: '10px',
+    paddingRight: 10,
   },
 
 };

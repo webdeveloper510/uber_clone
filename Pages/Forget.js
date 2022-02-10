@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
-const image = { uri: require('../assets/background.png') };
+const image = require('../assets/background.png') ;
+
 function Forget({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   return (
@@ -13,7 +14,7 @@ function Forget({ navigation }) {
             source={require('../assets/logo1.png')}
           />
           <View style={{ marginVertical: 80 }}></View>
-          <h3 style={styles.bodytext}>Reset Password</h3>
+          <Text style={styles.bodytext}>Reset Password</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -40,7 +41,7 @@ const styles = {
     flex: 1,
   },
   ancer:{ 
-    fontSize:'25px'
+    fontSize:25
   },
   image: {
     flex: 1,

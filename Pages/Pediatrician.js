@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput, View, Text } from 'react-native';
-import '../assets/style.css';
+// import '../assets/style.css';
 const myIcon = <Icon name="notifications" size={30} color="#900" />;
 const myIcon1 = <Icon name="location" size={30} color="#900" />;
 
@@ -22,13 +22,13 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar.png')}
-              style={{ width: '150px', height: '150px',borderRadius:'50%', margin:'auto' }}
+              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>Dr. Ronan Peiterson</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>Pediatrician</h5>
-               <p style={{color:'#7583f2'}}>8 Years Experience</p>
+               <Text>Dr. Ronan Peiterson</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
               
             </View>
             <View style={styles.col}>
@@ -51,13 +51,13 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar2.png')}
-              style={{ width: '150px', height: '150px',borderRadius:'50%', margin:'auto' }}
+              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>Dr.Beatriz Watson</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>Pediatrician</h5>
-               <p style={{color:'#7583f2'}}>8 Years Experience</p>
+               <Text>Dr.Beatriz Watson</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
               
             </View>
             <View style={styles.col}>
@@ -79,13 +79,13 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar.png')}
-              style={{ width: '150px', height: '150px',borderRadius:'50%', margin:'auto' }}
+              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>Dr. Brayden Trump</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>Pediatrician</h5>
-               <p style={{color:'#7583f2'}}>8 Years Experience</p>
+               <Text>Dr. Brayden Trump</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
               
             </View>
             <View style={styles.col}>
@@ -107,13 +107,13 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar2.png')}
-              style={{ width: '150px', height: '150px',borderRadius:'50%', margin:'auto' }}
+              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <h3>Dr. Appollonia Ellison</h3>
-               <h5 style={{color:'#6a5f5f', fontWeight:500}}>Pediatrician</h5>
-               <p style={{color:'#7583f2'}}>8 Years Experience</p>
+               <Text>Dr. Appollonia Ellison</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
               
             </View>
             <View style={styles.col}>
@@ -151,12 +151,12 @@ const styles = {
   color:'#fc9b0c',
   borderColor:'#cddc39',
   padding: 6,
-  borderWidth:'2px',
+  borderWidth:2,
   marginHorizontal:5,
   },
   CallNow: {
     borderColor:'blue',
-    borderWidth: '2px',
+    borderWidth: 2,
     borderRadius:10,
     width: 107,
     padding: 8,
@@ -165,7 +165,7 @@ const styles = {
     backgroundColor:'#e4e6ff',
     borderColor:'#aab3ed',
     padding: 6,
-    borderWidth:'2px',
+    borderWidth:2,
     marginHorizontal:5,
   },
   cardbody1: {
@@ -174,12 +174,12 @@ const styles = {
   cardbody2: {
     width:'50%',
     foat:'left',
-    padding:'12px',
+    padding:12,
  },
  row1: {
   flexDirection: "row",
   flexWrap: "wrap",
-  borderRadius:'20px',
+  borderRadius:20,
   margin: 12,
   padding: 12,
   boxShadow:' 0 8px 16px 0 rgb(0 0 0 / 20%)',
@@ -189,7 +189,7 @@ const styles = {
     marginVertical: 12,
     marginHorizontal:12,
     borderColor: 'black',
-    borderWidth:'1px',
+    borderWidth:1,
     borderRadius: 5,
     fontSize: 16,
     paddingLeft:15,
@@ -201,7 +201,7 @@ const styles = {
   col: {
     width: '50%',
     textAlign: 'left',
-    paddingleft:'10px'
+    paddingleft:10
   },
 
 };

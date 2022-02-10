@@ -7,7 +7,7 @@ import Forget from './Pages/Forget';
 import Home from './Pages/Home';
 import Pediatrician from './Pages/Pediatrician';
 import Docterprofile from './Pages/Docterprofile';
-import './assets/style.css';
+// import './assets/style.css';
 const Stack = createNativeStackNavigator();
 
 export default () =>(

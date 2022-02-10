@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text, ScrollView } from 'react-native';
 
-const image = { uri: require('../assets/background.png') };
+const image =  require('../assets/background.png') ;
 function Register({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
@@ -17,7 +17,7 @@ function Register({ navigation }) {
             source={require('../assets/logo1.png')}
           />
           <View style={{ marginVertical: 40 }}></View>
-          <h3 style={styles.bodytext}>Create your account</h3>
+          <Text style={styles.bodytext}>Create your account</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -57,12 +57,12 @@ function Register({ navigation }) {
           >
             <Text style={{ color: 'white', fontSize: 26,letterSpacing: 1  }}>Register</Text>
           </TouchableOpacity>
-          <p style={{textAlign:'center', letterSpacing: 1,  marginTop:'62px', fontSize:'20px',color: 'white', fontWeight: 500, display:'flex',justifyContent:'center'}}>you have already account?  <TouchableOpacity
+          <Text style={{textAlign:'center', letterSpacing: 1,  marginTop:62, fontSize:20,color: 'white', fontWeight: '500', display:'flex',justifyContent:'center'}}>you have already account?  <TouchableOpacity
             style={styles.ancer}
                onPress={() => navigation.navigate('Register')}
           >
-            <Text style={{fontSize:'20px', letterSpacing: 1,color: '#337ab7',fontFamily:"Roboto Condensed", fontWeight: 600,paddingLeft:'10px',}}>Login</Text>
-          </TouchableOpacity></p>
+            <Text style={{fontSize:20, letterSpacing: 1,color: '#337ab7', fontWeight: '600',paddingLeft:10,}}>Login</Text>
+          </TouchableOpacity></Text>
         </View>
        
       </ImageBackground>
@@ -77,7 +77,7 @@ const styles = {
     flex: 1,
   },
   ancer:{ 
-    fontSize:'25px'
+    fontSize:25
   },
   image: {
     flex: 1,

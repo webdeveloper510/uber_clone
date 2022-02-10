@@ -7,9 +7,9 @@ function Docterprofile(navigation) {
   return <View style={styles.container}>
          <View style={styles.row}>
              <View style={styles.col}>
-                  <h3 style={{color:'white',}}> Dr. Brayden Trump</h3>
-                  <p style={{color:'white', margin: 0}}>Pediatrician</p>
-                  <p style={{color:'white'}}>{myIcon} 4.76 Rating</p>
+                  <Text style={{color:'white',}}> Dr. Brayden Trump</Text>
+                  <Text style={{color:'white', margin: 0}}>Pediatrician</Text>
+                  <Text style={{color:'white'}}>{myIcon} 4.76 Rating</Text>
                  </View>
                  <View style={styles.col1}>
                      <Image 
@@ -22,15 +22,15 @@ function Docterprofile(navigation) {
            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
            </Text>
 
-           <h3 style={styles.text}>
+           <Text style={styles.text}>
            Experience
-           </h3>
+           </Text>
            <Text style={styles.lorem}>10 Years</Text>
 
-           <h3 style={styles.text}>Availability</h3>
+           <Text style={styles.text}>Availability</Text>
               <Text style={styles.lorem}>8:00AM - 10:30PM</Text>
           
-           <h3 style={styles.text}>Location</h3>
+           <Text style={styles.text}>Location</Text>
            <Image 
                      style={styles.map}
                       source={require('../assets/map.png')}/>
@@ -47,12 +47,12 @@ const styles = {
         height:'200px',
         width: '200px'
     },
-    text: {
-     fontSize:'21px'
-    },
-    lorem: {
-      fontSize:'19px',
-    },
+    // text: {
+    //  fontSize:21
+    // },
+    // lorem: {
+    //   fontSize:19,
+    // },
     map:{
       height:'200px',
       width: '100%'
@@ -61,8 +61,8 @@ const styles = {
     row: {
       flexDirection: "row",
       flexWrap: "wrap",
-      padding:"10px",
-      marginTop:'12%'
+      padding:10,
+      marginTop:12
     },
     col: {
       width: '50%',
@@ -71,11 +71,11 @@ const styles = {
     col1: {
       width: '50%',
       textAlign: 'center',
-      paddingleft:'10px'
+      paddingleft:10
     },
     boddy: {
       backgroundColor:'#ffff',
-      borderRadius:'30px',
+      borderRadius:30,
       padding:'20px'
     }
 }

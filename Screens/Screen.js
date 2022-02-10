@@ -28,7 +28,7 @@ const styles = {
         height:'128px',
         width:'96%',
         position: 'absolute',
-    marginTop: '65%' ,
+    marginTop: 65 ,
     marginLeft: 10
     },
     button: {

@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
-const image = { uri: require('../assets/background.png') };
+const image =  require('../assets/download.jpg') ;
+console.log(image)
 function Login({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
@@ -16,7 +17,7 @@ function Login({ navigation }) {
             source={require('../assets/logo1.png')}
           />
           <View style={{ marginVertical: 40 }}></View>
-          <h3 style={styles.bodytext}>Sign in your Account</h3>
+          <Text style={styles.bodytext}>Sign in your Account</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -38,22 +39,22 @@ function Login({ navigation }) {
             style={styles.forget}
                onPress={() => navigation.navigate('Forget')}
           >
-            <Text style={{ color: 'white',fontFamily:"Roboto Condensed", fontSize:'23px' }}>Forget Password ?</Text>
+            <Text style={{ color: 'white', fontSize:23 }}>Forget Password ?</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('Home')}
           >
-            <Text style={{ color: 'white', fontSize: 26,fontFamily:"Roboto Condensed", letterSpacing: 1 }}>Sign In</Text>
+            <Text style={{ color: 'white', fontSize: 26, letterSpacing: 1 }}>Sign In</Text>
           </TouchableOpacity>
        
        
-       <p style={{textAlign:'center', letterSpacing: 1,  marginTop:'62px', fontSize:'20px',color: 'white', fontWeight: 500, display:'flex',justifyContent:'center'}}>Or Sign up with  <TouchableOpacity
+       <Text style={{textAlign:'center', letterSpacing: 1,  marginTop:62, fontSize:20,color: 'white', fontWeight: '500', display:'flex',justifyContent:'center'}}>Or Sign up with  <TouchableOpacity
             style={styles.ancer}
                onPress={() => navigation.navigate('Register')}
           >
-            <Text style={{ fontSize:'20px', letterSpacing: 1,color: '#337ab7',fontFamily:"Roboto Condensed", fontWeight: 600,paddingLeft:'10px', }}>Register</Text>
-          </TouchableOpacity></p>
+            <Text style={{ fontSize:20, letterSpacing: 1,color: '#337ab7', fontWeight: '600',paddingLeft:10, }}>Register</Text>
+          </TouchableOpacity></Text>
        
           
        </View>
@@ -70,7 +71,7 @@ const styles = {
   },
   ancer:{
    
-    fontSize:'25px'
+    fontSize:25
   },
   image: {
     flex: 1,
@@ -104,7 +105,7 @@ const styles = {
     borderColor: 'white',
     borderRadius: 30,
     fontSize: 26,
-    fontFamily:"Roboto Condensed",
+
     textAlign: 'center',
     color: 'black',
     backgroundColor: 'white',
