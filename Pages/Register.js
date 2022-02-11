@@ -8,8 +8,9 @@ function Register({ navigation }) {
   const [Email, onChangeEmail] = React.useState(null);
   const [Password, onChangePassword] = React.useState(null);
   return (
+    <ScrollView >
     <View style={styles.container}>
-         <ScrollView >
+         
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <View style={styles.overlay}>
         <Image
@@ -17,7 +18,7 @@ function Register({ navigation }) {
             source={require('../assets/logo1.png')}
           />
           <View style={{ marginVertical: 40 }}></View>
-          <Text style={styles.bodytext}>Create your account</Text>
+          <Text style={styles.bodytext}>Sign Up</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -59,15 +60,16 @@ function Register({ navigation }) {
           </TouchableOpacity>
           <Text style={{textAlign:'center', letterSpacing: 1,  marginTop:62, fontSize:20,color: 'white', fontWeight: '500', display:'flex',justifyContent:'center'}}>you have already account?  <TouchableOpacity
             style={styles.ancer}
-               onPress={() => navigation.navigate('Register')}
+               onPress={() => navigation.navigate('Login')}
           >
-            <Text style={{fontSize:20, letterSpacing: 1,color: '#337ab7', fontWeight: '600',paddingLeft:10,}}>Login</Text>
+            <Text style={{fontSize:20, letterSpacing: 1,color: 'white', fontWeight: '600',paddingLeft:10,}}>Login</Text>
           </TouchableOpacity></Text>
         </View>
        
       </ImageBackground>
-      </ScrollView>
+     
     </View>
+    </ScrollView>
 
   );
 }
@@ -84,7 +86,8 @@ const styles = {
     justifyContent: "center",
   },
   tinyLogo: {
-    height: 70
+    height: 70,
+    width: 300
   },
   button: {
     alignItems: "center",
@@ -119,7 +122,7 @@ const styles = {
   overlay: {
     flex: 1,
     padding: 30,
-    background:'linear-gradient(2deg, #000000c7, #ffffff00)'
+    backgroundColor:'linear-gradient(2deg, #000000c7, #ffffff00)',
   }
 };
 

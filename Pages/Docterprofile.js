@@ -1,14 +1,16 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Entypo';
-import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
+import { ScrollView, Image, View, Text } from 'react-native';
 const myIcon = <Icon name="star" size={30} color="#cddc39" />;
 
 function Docterprofile(navigation) {
-  return <View style={styles.container}>
+  return (
+    <ScrollView>
+  <View style={styles.container}>
          <View style={styles.row}>
              <View style={styles.col}>
                   <Text style={{color:'white',}}> Dr. Brayden Trump</Text>
-                  <Text style={{color:'white', margin: 0}}>Pediatrician</Text>
+                  <Text style={{color:'white', marginVertical: 10}}>Pediatrician</Text>
                   <Text style={{color:'white'}}>{myIcon} 4.76 Rating</Text>
                  </View>
                  <View style={styles.col1}>
@@ -35,7 +37,9 @@ function Docterprofile(navigation) {
                      style={styles.map}
                       source={require('../assets/map.png')}/>
          </View>
-  </View>;
+  </View>
+  </ScrollView>
+  );
 }
 const styles = {
     container: {
@@ -44,17 +48,20 @@ const styles = {
     },
 
     profile:{
-        height:'200px',
-        width: '200px'
+        height:200,
+        width: 200
     },
-    // text: {
-    //  fontSize:21
-    // },
-    // lorem: {
-    //   fontSize:19,
-    // },
+    text: {
+     fontSize:21,
+     fontWeight:'700',
+     marginTop:15,
+     marginBottom:10
+    },
+    lorem: {
+      fontSize:19,
+    },
     map:{
-      height:'200px',
+      height:200,
       width: '100%'
     },
 
@@ -66,7 +73,8 @@ const styles = {
     },
     col: {
       width: '50%',
-      paddingLeft:20
+      paddingLeft:20,
+      marginTop: 50
     },
     col1: {
       width: '50%',
@@ -76,7 +84,7 @@ const styles = {
     boddy: {
       backgroundColor:'#ffff',
       borderRadius:30,
-      padding:'20px'
+      padding:20
     }
 }
 export default Docterprofile;

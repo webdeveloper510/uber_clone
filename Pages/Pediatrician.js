@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput, View, Text } from 'react-native';
+import { TouchableOpacity, Image, TextInput, View, Text, ScrollView } from 'react-native';
 // import '../assets/style.css';
-const myIcon = <Icon name="notifications" size={30} color="#900" />;
-const myIcon1 = <Icon name="location" size={30} color="#900" />;
+
 
 
 function Pediatrician({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   return (
+    <ScrollView>
     <View style={styles.container}>
       <TextInput
             style={styles.input}
@@ -22,7 +22,7 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar.png')}
-              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
+              style={{ width: 150, height: 150,borderRadius:100, marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -36,14 +36,14 @@ function Pediatrician({ navigation }) {
             style={styles.book}
             onPress={() => navigation.navigate('Docterprofile')}
           >
-            <Text style={{ color:'#cddc39', fontSize: 18 }}>Book Video Consult </Text>
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Book Video Consult </Text>
           </TouchableOpacity>
             </View>
             <View style={styles.col}>
             <TouchableOpacity
             style={styles.Appoin}
           >
-            <Text style={{ color:'#6b7af5', fontSize: 18 }}>Book Appointment </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14 }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -51,7 +51,7 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar2.png')}
-              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
+              style={{ width: 150, height: 150,borderRadius:100, marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -64,14 +64,14 @@ function Pediatrician({ navigation }) {
             <TouchableOpacity
             style={styles.book}
           >
-            <Text style={{ color:'#cddc39', fontSize: 18 }}>Book Video Consult </Text>
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Book Video Consult </Text>
           </TouchableOpacity>
             </View>
             <View style={styles.col}>
             <TouchableOpacity
             style={styles.Appoin}
           >
-            <Text style={{ color:'#6b7af5', fontSize: 18 }}>Book Appointment </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14 }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -79,7 +79,7 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar.png')}
-              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
+              style={{ width: 150, height: 150,borderRadius:100, marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -92,14 +92,14 @@ function Pediatrician({ navigation }) {
             <TouchableOpacity
             style={styles.book}
           >
-            <Text style={{ color:'#cddc39', fontSize: 18 }}>Book Video Consult </Text>
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Book Video Consult </Text>
           </TouchableOpacity>
             </View>
             <View style={styles.col}>
             <TouchableOpacity
             style={styles.Appoin}
           >
-            <Text style={{ color:'#6b7af5', fontSize: 18 }}>Book Appointment </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14 }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -107,7 +107,7 @@ function Pediatrician({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/avatar2.png')}
-              style={{ width: '150px', height: '150px',borderRadius:50, margin:'auto' }}
+              style={{ width: 150, height: 150,borderRadius:100,marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -120,19 +120,19 @@ function Pediatrician({ navigation }) {
             <TouchableOpacity
             style={styles.book}
           >
-            <Text style={{ color:'#cddc39', fontSize: 18 }}>Book Video Consult </Text>
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Book Video Consult </Text>
           </TouchableOpacity>
             </View>
             <View style={styles.col}>
             <TouchableOpacity
             style={styles.Appoin}
           >
-            <Text style={{ color:'#6b7af5', fontSize: 18 }}>Book Appointment </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14   }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
     </View>
-
+    </ScrollView>
   );
 }
 
@@ -175,6 +175,7 @@ const styles = {
     width:'50%',
     foat:'left',
     padding:12,
+    marginVertical:40
  },
  row1: {
   flexDirection: "row",

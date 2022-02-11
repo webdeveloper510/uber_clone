@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput, View, Text } from 'react-native';
+import { TouchableOpacity, Image, ImageBackground, ScrollView, TextInput, View, Text } from 'react-native';
 
 const myIcon = <Icon name="notifications" size={30} color="#900" />;
 const myIcon1 = <Icon name="location" size={30} color="#900" />;
@@ -9,13 +9,14 @@ const myIcon1 = <Icon name="location" size={30} color="#900" />;
 function Home({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.row}>
         <View style={styles.col}>
           <Text style={styles.location}>{myIcon1} India</Text>
         </View>
         <View style={styles.col2}>
-          <Text>{myIcon}</Text>
+          <Text style={{marginLeft:135}}>{myIcon}</Text>
         </View>
       </View>
       <TextInput
@@ -24,7 +25,7 @@ function Home({ navigation }) {
             value={text}
             placeholderTextColor="black"
             placeholder="Seach for Doctor"
-            keyboardType="numeric"
+            keyboardType="text"
           />
           <View style={styles.card}>
             <Text>Find your doctor by speciality</Text>
@@ -40,7 +41,7 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download.jpg')}
-              style={{ width: '98%', height: '100%',borderRadius:20 }}
+              style={{ width: '98%', height: 150,borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -50,7 +51,7 @@ function Home({ navigation }) {
             style={styles.CallNow}
             onPress={() => navigation.navigate('Pediatrician')}
           >
-            <Text style={{ color:'#7070ef', fontSize: 21 }}>Call Now </Text>
+            <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -58,7 +59,7 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download1.jpg')}
-              style={{ width: '98%', height: '100%',borderRadius:20 }}
+              style={{ width: '98%', height: 150,borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -68,7 +69,7 @@ function Home({ navigation }) {
             style={styles.CallNow}
             onPress={() => navigation.navigate('Pediatrician')}
           >
-            <Text style={{ color:'#7070ef', fontSize: 21 }}>Call Now </Text>
+            <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -76,7 +77,7 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download2.jpg')}
-              style={{ width: '98%', height: '100%',borderRadius:20 }}
+              style={{ width: '98%', height: 150,borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -86,12 +87,12 @@ function Home({ navigation }) {
             style={styles.CallNow}
             onPress={() => navigation.navigate('Pediatrician')}
           >
-            <Text style={{ color:'#7070ef', fontSize: 21 }}>Call Now </Text>
+            <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
           </TouchableOpacity>
             </View>
           </View>
     </View>
-
+    </ScrollView>
   );
 }
 
@@ -111,6 +112,7 @@ const styles = {
     borderRadius:10,
     width: 107,
     padding: 8,
+    marginTop:10,
   },
   tinyLogo: {
     width:'100%',
@@ -159,7 +161,7 @@ const styles = {
   },
   col2: {
     width: '50%',
-    textAlign: 'right',
+    textAlign: 'center',
     paddingRight: 10,
   },
 

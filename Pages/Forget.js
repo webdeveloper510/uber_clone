@@ -48,7 +48,8 @@ const styles = {
     justifyContent: "center",
   },
   tinyLogo: {
-    height: 70
+    height: 70,
+    width: 300
   },
   button: {
     alignItems: "center",
@@ -60,7 +61,8 @@ const styles = {
   },
   bodytext: {
     fontSize: 29,
-    marginTop: 48,
+    marginTop: 40,
+    marginBottom:18,
     textAlign: 'center',
     color:'#000000',
     letterSpacing: 2

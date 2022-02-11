@@ -1,12 +1,12 @@
 import React from "react";
-import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
-const image =  require('../assets/download.jpg') ;
+import { TouchableOpacity, Image, ImageBackground, ScrollView, TextInput, View, Text } from 'react-native';
+const image =  require('../assets/background.png') ;
 console.log(image)
 function Login({ navigation }) {
   const [text, onChangeText] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
   return (
-
+<ScrollView>
     <View  style={styles.container}>
      
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -17,7 +17,7 @@ function Login({ navigation }) {
             source={require('../assets/logo1.png')}
           />
           <View style={{ marginVertical: 40 }}></View>
-          <Text style={styles.bodytext}>Sign in your Account</Text>
+          <Text style={styles.bodytext}>Sign In </Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -39,7 +39,7 @@ function Login({ navigation }) {
             style={styles.forget}
                onPress={() => navigation.navigate('Forget')}
           >
-            <Text style={{ color: 'white', fontSize:23 }}>Forget Password ?</Text>
+            <Text style={{ color: 'white', fontSize:23, textAlign:'center' }}>Forget Password ?</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
@@ -53,7 +53,7 @@ function Login({ navigation }) {
             style={styles.ancer}
                onPress={() => navigation.navigate('Register')}
           >
-            <Text style={{ fontSize:20, letterSpacing: 1,color: '#337ab7', fontWeight: '600',paddingLeft:10, }}>Register</Text>
+            <Text style={{ fontSize:20, letterSpacing: 1,color: '#3f00ff', fontWeight: '600',paddingLeft:5,marginBottom:-5 }}>Register</Text>
           </TouchableOpacity></Text>
        
           
@@ -61,6 +61,7 @@ function Login({ navigation }) {
       </ImageBackground>
    
     </View>
+    </ScrollView>
 
   );
 }
@@ -78,7 +79,8 @@ const styles = {
     justifyContent: "center",
   },
   tinyLogo: {
-    height: 70
+    height: 70,
+    width: 300
   },
   button: {
     alignItems: "center",
@@ -89,8 +91,9 @@ const styles = {
     marginTop: 24
   },
   bodytext: {
-    fontSize: 29,
-    marginTop: 48,
+    fontSize: 25,
+    marginTop: 10,
+    marginBottom:18,
     textAlign: 'center',
     color:'#000000',
     letterSpacing: 2
@@ -105,7 +108,6 @@ const styles = {
     borderColor: 'white',
     borderRadius: 30,
     fontSize: 26,
-
     textAlign: 'center',
     color: 'black',
     backgroundColor: 'white',
