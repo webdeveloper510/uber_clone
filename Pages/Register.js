@@ -13,10 +13,12 @@ function Register({ navigation }) {
          
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <View style={styles.overlay}>
+        <View style={{marginHorizontal:'auto'}}>
         <Image
             style={styles.tinyLogo}
             source={require('../assets/logo1.png')}
           />
+          </View>
           <View style={{ marginVertical: 40 }}></View>
           <Text style={styles.bodytext}>Sign Up</Text>
           <TextInput
@@ -62,7 +64,7 @@ function Register({ navigation }) {
             style={styles.ancer}
                onPress={() => navigation.navigate('Login')}
           >
-            <Text style={{fontSize:20, letterSpacing: 1,color: 'white', fontWeight: '600',paddingLeft:10,}}>Login</Text>
+            <Text style={{fontSize:20, letterSpacing: 1,color: '#3f00ff', fontWeight: '600',paddingLeft:10,}}>Login</Text>
           </TouchableOpacity></Text>
         </View>
        
@@ -87,7 +89,7 @@ const styles = {
   },
   tinyLogo: {
     height: 70,
-    width: 300
+    width: 270
   },
   button: {
     alignItems: "center",
@@ -122,7 +124,7 @@ const styles = {
   overlay: {
     flex: 1,
     padding: 30,
-    backgroundColor:'linear-gradient(2deg, #000000c7, #ffffff00)',
+    background:'linear-gradient(2deg, #000000c7, #ffffff00)',
   }
 };
 

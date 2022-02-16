@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text } from 'react-native';
+import { TouchableOpacity, Image, ImageBackground, TextInput, View, Text } from 'react-native';
 const image = require('../assets/background.png') ;
 
 function Forget({ navigation }) {
@@ -9,10 +9,12 @@ function Forget({ navigation }) {
        
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <View style={styles.overlay}>
+        <View style={{marginHorizontal:'auto'}}>
         <Image
             style={styles.tinyLogo}
             source={require('../assets/logo1.png')}
           />
+          </View>
           <View style={{ marginVertical: 80 }}></View>
           <Text style={styles.bodytext}>Reset Password</Text>
           <TextInput
@@ -49,7 +51,7 @@ const styles = {
   },
   tinyLogo: {
     height: 70,
-    width: 300
+    width: 270
   },
   button: {
     alignItems: "center",
@@ -61,7 +63,7 @@ const styles = {
   },
   bodytext: {
     fontSize: 29,
-    marginTop: 40,
+    marginTop: 20,
     marginBottom:18,
     textAlign: 'center',
     color:'#000000',

@@ -12,10 +12,12 @@ function Login({ navigation }) {
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <View
       style={styles.overlay}>
+        <View style={{marginHorizontal:'auto'}}>
           <Image
             style={styles.tinyLogo}
             source={require('../assets/logo1.png')}
           />
+          </View>
           <View style={{ marginVertical: 40 }}></View>
           <Text style={styles.bodytext}>Sign In </Text>
           <TextInput
@@ -24,7 +26,7 @@ function Login({ navigation }) {
             value={text}
             placeholderTextColor="black"
             placeholder="Email"
-            keyboardType="numeric"
+            keyboardType="email"
           />
           <TextInput
             style={styles.input}
@@ -80,7 +82,7 @@ const styles = {
   },
   tinyLogo: {
     height: 70,
-    width: 300
+    width: 270
   },
   button: {
     alignItems: "center",
@@ -112,6 +114,7 @@ const styles = {
     color: 'black',
     backgroundColor: 'white',
     padding: 10,
+    
   },
   overlay: {
     flex: 1,

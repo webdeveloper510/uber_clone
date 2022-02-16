@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { TouchableOpacity, Image, ImageBackground, ScrollView, TextInput, View, Text } from 'react-native';
+import { TouchableOpacity, Modal, Image, Pressable, ScrollView, TextInput, View, Text } from 'react-native';
 
 const myIcon = <Icon name="notifications" size={30} color="#900" />;
 const myIcon1 = <Icon name="location" size={30} color="#900" />;
 
 
 function Home({ navigation }) {
+  const [modalVisible, setModalVisible] = useState(false);
   const [text, onChangeText] = React.useState(null);
   return (
     <ScrollView>
@@ -16,7 +17,7 @@ function Home({ navigation }) {
           <Text style={styles.location}>{myIcon1} India</Text>
         </View>
         <View style={styles.col2}>
-          <Text style={{marginLeft:135}}>{myIcon}</Text>
+          <Text style={{marginLeft:130}}>{myIcon}</Text>
         </View>
       </View>
       <TextInput
@@ -41,7 +42,7 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download.jpg')}
-              style={{ width: '98%', height: 150,borderRadius:20 }}
+              style={{ width: '98%', height: 175,borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -49,7 +50,7 @@ function Home({ navigation }) {
                <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
                <TouchableOpacity
             style={styles.CallNow}
-            onPress={() => navigation.navigate('Pediatrician')}
+            onPress={() => setModalVisible(true)}
           >
             <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
           </TouchableOpacity>
@@ -59,7 +60,7 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download1.jpg')}
-              style={{ width: '98%', height: 150,borderRadius:20 }}
+              style={{ width: '98%', height: 175,borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -77,7 +78,7 @@ function Home({ navigation }) {
             <View style={styles.cardbody1}>
             <Image
               source={require('../assets/download2.jpg')}
-              style={{ width: '98%', height: 150,borderRadius:20 }}
+              style={{ width: '98%', height: 175,borderRadius:20 }}
             />
             </View>
             <View style={styles.cardbody2}>
@@ -92,6 +93,36 @@ function Home({ navigation }) {
             </View>
           </View>
     </View>
+    <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Hello World!</Text>
+            <View style={{display:'block'}}>
+            <Pressable
+              style={[styles.button, styles.buttonClose1]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Decline </Text>
+            </Pressable>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Confirm</Text>
+            </Pressable>
+            </View>
+          
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
@@ -164,6 +195,48 @@ const styles = {
     textAlign: 'center',
     paddingRight: 10,
   },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    float: 'left',
+    width:'50%',
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  buttonClose1: {
+    backgroundColor: "#f3214c",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  },
+  centeredView: {
+    marginTop: 40
+  }
 
 };
 export default Home
