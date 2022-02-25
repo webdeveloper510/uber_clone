@@ -17,24 +17,21 @@ import {
   NunitoSans_900Black_Italic 
 } from '@expo-google-fonts/nunito-sans'
 
-function Editprofile( navigation ) {
+function Editprofile({ navigation }) {
     const [text, onChangeText] = React.useState(null);
-  const [number, onChangeNumber] = React.useState(null);
   const [Email, onChangeEmail] = React.useState(null);
   const [Password, onChangePassword] = React.useState(null);
+  const [Phone, onChangeNumber] = React.useState(null);
+  const [Specialization, onChangespecial] = React.useState(null);
+
   return (
     <ScrollView >
     <View style={styles.container}>
          
         <View style={styles.overlay}>
-        <View style={{marginHorizontal:'auto'}}>
-        <Image
-            style={styles.tinyLogo}
-            source={require('../assets/logo1.png')}
-          />
-          </View>
-          <View style={{ marginVertical: 40 }}></View>
+         
           <Text style={styles.bodytext}>Edit Profile</Text>
+          <View style={{ marginVertical: 10 }}></View>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -63,17 +60,15 @@ function Editprofile( navigation ) {
           <TextInput
             style={styles.input}
             onChangeText={onChangeNumber}
-            value={number}
-            secureTextEntry={true}
+            value={Phone}
             placeholderTextColor="black"
             placeholder="Phone No"
             keyboardType="numeric"
           />
           <TextInput
             style={styles.input}
-            onChangeText={onChangeNumber}
-            value={number}
-            secureTextEntry={true}
+            onChangeText={onChangespecial}
+            value={Specialization}
             placeholderTextColor="black"
             placeholder="Specialization"
             keyboardType="text"
@@ -139,7 +134,6 @@ const styles = {
     overlay: {
       flex: 1,
       padding: 30,
-      background:'linear-gradient(2deg, #000000c7, #ffffff00)',
     }
   };
 export default Editprofile
