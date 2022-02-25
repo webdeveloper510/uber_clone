@@ -1,17 +1,18 @@
 import React from 'react'
-import { View,Image, Text, ScrollView } from 'react-native'
+import { View,Image, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { withTheme } from 'react-native-elements'
 
-function Complete({ navigation }) {
+function Pending({ navigation }) {
 
   return (
-    <ScrollView >
+    <ScrollView  style={styles.body}>
     <View style={styles.container}>
       <View>
-        <Text style={styles.header}>Complete Order</Text>
+        <Text style={styles.header}>Pending Order</Text>
       </View>
       <View style={styles.row}>
       <View style={styles.col}>
-        <Text style={styles.order}>Order#: 985645</Text>
+        <Text style={styles.order}>Pending</Text>
         <Text style={styles.ordertext}>20-Dec-2020, 3:00 PM</Text>
       </View>
       <View style={styles.col1}>
@@ -23,7 +24,7 @@ function Complete({ navigation }) {
       </View>
       <View style={styles.row}>
       <View style={styles.col}>
-        <Text style={styles.order}>Order#: 986522</Text>
+        <Text style={styles.order}>Pending</Text>
         <Text style={styles.ordertext}>21-Dec-2020, 3:00 PM</Text>
       </View>
       <View style={styles.col1}>
@@ -37,7 +38,7 @@ function Complete({ navigation }) {
 
       <View style={styles.row}>
       <View style={styles.col}>
-        <Text style={styles.order}>Order#: 987252</Text>
+        <Text style={styles.order}>Pending</Text>
         <Text style={styles.ordertext}>22-Dec-2020, 3:00 PM</Text>
       </View>
       <View style={styles.col1}>
@@ -51,7 +52,7 @@ function Complete({ navigation }) {
 
       <View style={styles.row}>
       <View style={styles.col}>
-        <Text style={styles.order}>Order#: 988906</Text>
+        <Text style={styles.order}>Pending</Text>
         <Text style={styles.ordertext}>23-Dec-2020, 3:00 PM</Text>
       </View>
       <View style={styles.col1}>
@@ -62,15 +63,36 @@ function Complete({ navigation }) {
       </View>
       </View>
 
+
+      <View style={styles.row}>
+      <View style={styles.col}>
+        <Text style={styles.order}>Pending</Text>
+        <Text style={styles.ordertext}>23-Dec-2020, 3:00 PM</Text>
+      </View>
+      <View style={styles.col1}>
+      <Image
+              source={require('../assets/avatar.png')}
+              style={{ width: 80, height: 80,borderRadius:100,margin:'auto' }}
+            />
+      </View>
+      </View>
     </View>
     </ScrollView>
   )
 }
 
 const styles = {
+    body: {
+     backgroundColor:'white',
+    },
   container: {
     flex: 1,
-    backgroundColor:'white'
+    backgroundColor:'white',
+  },
+  cancel: {
+    width: '50%',
+    textAlign: 'left',
+    paddingleft:10
   },
   row: { 
     flexDirection: "row",
@@ -107,6 +129,9 @@ const styles = {
     fontSize:30,
     padding:17,
     textAlign:'center',
+  },
+  button: {
+
   }
 }
-export default Complete
+export default Pending

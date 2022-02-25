@@ -17,7 +17,7 @@ function Home({ navigation }) {
           <Text style={styles.location}>{myIcon1} India</Text>
         </View>
         <View style={styles.col2}>
-          <Text style={{marginLeft:130}}>{myIcon}</Text>
+          <Text style={{textAlign:'right'}}>{myIcon}</Text>
         </View>
       </View>
       <TextInput
@@ -32,7 +32,7 @@ function Home({ navigation }) {
             <Text>Find your doctor by speciality</Text>
 
             <TouchableOpacity
-            style={styles.button}
+            style={{}}
           >
             <Text style={{ color:'#7070ef', fontSize: 21 }}>View All </Text>
           </TouchableOpacity>
@@ -41,54 +41,115 @@ function Home({ navigation }) {
           <View style={styles.row1}>
             <View style={styles.cardbody1}>
             <Image
-              source={require('../assets/download.jpg')}
-              style={{ width: '98%', height: 175,borderRadius:20 }}
+              source={require('../assets/avatar.png')}
+              style={{ width: 150, height: 150,borderRadius:100, marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <Text>New York City DOHMH Public Health Laboratory</Text>
-               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
-               <TouchableOpacity
-            style={styles.CallNow}
+               <Text>Dr. Ronan Peiterson</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
+              
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.book}
+            onPress={() => navigation.navigate('Docterprofile')}
+          >
+            <Text style={{ color:'#cddc39', fontSize: 14 }}> Video Call </Text>
+          </TouchableOpacity>
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.Appoin}
             onPress={() => setModalVisible(true)}
           >
-            <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14 }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
           <View style={styles.row1}>
             <View style={styles.cardbody1}>
             <Image
-              source={require('../assets/download1.jpg')}
-              style={{ width: '98%', height: 175,borderRadius:20 }}
+              source={require('../assets/avatar2.png')}
+              style={{ width: 150, height: 150,borderRadius:100, marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <Text>New York City DOHMH Public Health Laboratory</Text>
-               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
-               <TouchableOpacity
-            style={styles.CallNow}
-            onPress={() => navigation.navigate('Pediatrician')}
+               <Text>Dr.Beatriz Watson</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
+              
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.book}
           >
-            <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Video Call </Text>
+          </TouchableOpacity>
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.Appoin}
+          >
+            <Text style={{ color:'#6b7af5', fontSize: 14 }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
           <View style={styles.row1}>
             <View style={styles.cardbody1}>
             <Image
-              source={require('../assets/download2.jpg')}
-              style={{ width: '98%', height: 175,borderRadius:20 }}
+              source={require('../assets/avatar.png')}
+              style={{ width: 150, height: 150,borderRadius:100, marginVertical:10 }}
             />
             </View>
             <View style={styles.cardbody2}>
-               <Text>New York City DOHMH Public Health Laboratory</Text>
-               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>455 1st Avenue, New York , NY Unite.....</Text>
-               <TouchableOpacity
-            style={styles.CallNow}
+               <Text>Dr. Brayden Trump</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
+              
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.book}
+          >
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Video Call </Text>
+          </TouchableOpacity>
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.Appoin}
+          >
+            <Text style={{ color:'#6b7af5', fontSize: 14 }}>Book Appointment </Text>
+          </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.row1}>
+            <View style={styles.cardbody1}>
+            <Image
+              source={require('../assets/avatar2.png')}
+              style={{ width: 150, height: 150,borderRadius:100,marginVertical:10 }}
+            />
+            </View>
+            <View style={styles.cardbody2}>
+               <Text>Dr. Appollonia Ellison</Text>
+               <Text style={{color:'#6a5f5f', fontWeight:'500'}}>Pediatrician</Text>
+               <Text style={{color:'#7583f2'}}>8 Years Experience</Text>
+              
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.book}
+          >
+            <Text style={{ color:'#cddc39', fontSize: 14 }}>Video Call</Text>
+          </TouchableOpacity>
+            </View>
+            <View style={styles.col}>
+            <TouchableOpacity
+            style={styles.Appoin}
             onPress={() => navigation.navigate('Pediatrician')}
           >
-            <Text style={{ color:'#7070ef', fontSize: 19 }}>Call Now </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14   }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -195,6 +256,64 @@ const styles = {
     textAlign: 'center',
     paddingRight: 10,
   },
+  book: {
+    backgroundColor:'#feedd1',
+    color:'#fc9b0c',
+    borderColor:'#cddc39',
+    padding: 6,
+    borderWidth:2,
+    marginHorizontal:5,
+    },
+    CallNow: {
+      borderColor:'blue',
+      borderWidth: 2,
+      borderRadius:10,
+      width: 107,
+      padding: 8,
+    },
+    Appoin:{
+      backgroundColor:'#e4e6ff',
+      borderColor:'#aab3ed',
+      padding: 6,
+      borderWidth:2,
+      marginHorizontal:5,
+    },
+    cardbody1: {
+       width:'50%',
+    },
+    cardbody2: {
+      width:'50%',
+      foat:'left',
+      padding:12,
+      marginVertical:40
+   },
+   row1: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    borderRadius:20,
+    margin: 12,
+    padding: 12,
+    boxShadow:' 0 8px 16px 0 rgb(0 0 0 / 20%)',
+  },
+    input: {
+      height: 56,
+      marginVertical: 12,
+      marginHorizontal:12,
+      borderColor: 'black',
+      borderWidth:1,
+      borderRadius: 5,
+      fontSize: 16,
+      paddingLeft:15,
+      paddingRight: 15,
+      color: 'black',
+      backgroundColor: 'white',
+      padding: 10,
+    },
+    col: {
+      width: '50%',
+      textAlign: 'left',
+      paddingleft:10
+    },
   modalView: {
     margin: 20,
     backgroundColor: "white",
