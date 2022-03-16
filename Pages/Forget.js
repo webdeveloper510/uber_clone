@@ -1,38 +1,35 @@
 import React from "react";
 import { TouchableOpacity, Image, ImageBackground, TextInput, View, Text } from 'react-native';
 import { 
-  NunitoSans_200ExtraLight,
-  NunitoSans_200ExtraLight_Italic,
-  NunitoSans_300Light,
-  NunitoSans_300Light_Italic,
-  NunitoSans_400Regular,
-  NunitoSans_400Regular_Italic,
-  NunitoSans_600SemiBold,
-  NunitoSans_600SemiBold_Italic,
-  NunitoSans_700Bold,
-  NunitoSans_700Bold_Italic,
-  NunitoSans_800ExtraBold,
-  NunitoSans_800ExtraBold_Italic,
-  NunitoSans_900Black,
-  NunitoSans_900Black_Italic 
-} from '@expo-google-fonts/nunito-sans'
-const image = require('../assets/background.png') ;
+  ArimaMadurai_500Medium,
+} from '@expo-google-fonts/arima-madurai';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 function Forget({ navigation }) {
   const [text, onChangeText] = React.useState(null);
+  let {fontLoad } = useFonts(
+    {
+      ArimaMadurai_500Medium 
+    }
+  );
   return (
     <View style={styles.container}>
        
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <View style={styles.overlay}>
         <View style={{marginHorizontal:'auto'}}>
         <Image
             style={styles.tinyLogo}
-            source={require('../assets/logo1.png')}
+            source={require('../assets/logo01.png')}
           />
           </View>
           <View style={{ marginVertical: 80 }}></View>
+          <View style={{
+    
+    padding: 28,
+    borderRadius: 25,}}>
           <Text style={styles.bodytext}>Reset Password</Text>
+          <Text style={{ fontSize: 20, letterSpacing: 1, fontFamily:' ArimaMadurai_500Medium' }}>Enter your email :</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -44,21 +41,23 @@ function Forget({ navigation }) {
           <TouchableOpacity
             style={styles.button}
           >
-            <Text style={{ color: 'white', fontSize: 26,letterSpacing: 1  }}>Submit</Text>
+            <Text style={{ color: 'white', fontSize: 17,letterSpacing: 1  }}>Submit</Text>
           </TouchableOpacity>
         </View>
+        </View>
 
-      </ImageBackground>
     </View>
 
   );
 }
 
+
 const styles = {
   container: {
     flex: 1,
   },
-  ancer:{ 
+  ancer:{
+   
     fontSize:25
   },
   image: {
@@ -66,44 +65,50 @@ const styles = {
     justifyContent: "center",
   },
   tinyLogo: {
-    height: 70,
-    width: 270
+    height: 129,
+    width: 183
   },
   button: {
     alignItems: "center",
-    backgroundColor: "#337ab7",
-    padding: 17,
-    height: 67,
-    borderRadius: 30,
+    backgroundColor: "#32407a",
+    padding: 11,
+    height: 51,
+    borderRadius: 5,
     marginTop: 24
   },
   bodytext: {
-    fontSize: 29,
-    marginTop: 20,
+    fontSize: 25,
+    marginTop: 10,
     marginBottom:18,
     textAlign: 'center',
-    color:'#000000',
-    letterSpacing: 2
+    color:'#2e3d78',
+    fontWeight: 800,
+    letterSpacing: 2,
+    fontFamily:' ArimaMadurai_500Medium'
   },
   forget: {
     textAlign: 'center',
     letterSpacing: 2
   },
   input: {
-    height: 56,
-    marginVertical: 12,
-    borderColor: 'white',
-    borderRadius: 30,
-    fontSize: 26,
-    textAlign: 'center',
+    height: 40,
+    marginBottom: 20,
+    borderColor: 'black',
+    borderWidth:1,
+    borderRadius: 5,
+    fontSize: 16,
+    textAlign: 'left',
     color: 'black',
     backgroundColor: 'white',
     padding: 10,
+    fontFamily:' ArimaMadurai_500Medium'
+    
   },
   overlay: {
     flex: 1,
-    padding: 30,
-    background:'linear-gradient(2deg, #000000c7, #ffffff00)'
+   paddingTop: 50,
+   paddingBottom:50,
+  backgroundColor:'#ffff',
   }
 };
 export default Forget

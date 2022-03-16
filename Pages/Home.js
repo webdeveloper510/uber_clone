@@ -2,26 +2,23 @@ import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity, Modal, Image, Pressable, ScrollView, TextInput, View, Text } from 'react-native';
 import { 
-  NunitoSans_200ExtraLight,
-  NunitoSans_200ExtraLight_Italic,
-  NunitoSans_300Light,
-  NunitoSans_300Light_Italic,
-  NunitoSans_400Regular,
-  NunitoSans_400Regular_Italic,
-  NunitoSans_600SemiBold,
-  NunitoSans_600SemiBold_Italic,
-  NunitoSans_700Bold,
-  NunitoSans_700Bold_Italic,
-  NunitoSans_800ExtraBold,
-  NunitoSans_800ExtraBold_Italic,
-  NunitoSans_900Black,
-  NunitoSans_900Black_Italic 
-} from '@expo-google-fonts/nunito-sans'
+  ArimaMadurai_500Medium,
+} from '@expo-google-fonts/arima-madurai'
+
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
+
 const myIcon = <Icon name="notifications" size={30} color="#900" />;
 const myIcon1 = <Icon name="location" size={30} color="#900" />;
 
 
 function Home({ navigation }) {
+  let {fontLoad } = useFonts(
+    {
+      ArimaMadurai_500Medium 
+    }
+  );
   const [modalVisible, setModalVisible] = useState(false);
   const [text, onChangeText] = React.useState(null);
   return (
@@ -164,7 +161,7 @@ function Home({ navigation }) {
             style={styles.Appoin}
             onPress={() => navigation.navigate('Pediatrician')}
           >
-            <Text style={{ color:'#6b7af5', fontSize: 14   }}>Book Appointment </Text>
+            <Text style={{ color:'#6b7af5', fontSize: 14 , fontFamily:'NunitoSans_400Regular_Italic'  }}>Book Appointment </Text>
           </TouchableOpacity>
             </View>
           </View>
@@ -208,7 +205,9 @@ function Home({ navigation }) {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor:'white'
+    backgroundColor:'white',
+   fontFamily:' ArimaMadurai_500Medium'
+    
   },
   card: {
     padding:20,
@@ -246,6 +245,7 @@ const styles = {
   },
   location:{
     fontSize:22,
+    fontFamily:' ArimaMadurai_500Medium',
   },
   col: {
     width: '50%',
@@ -259,6 +259,7 @@ const styles = {
     borderColor: 'black',
     borderWidth:1,
     borderRadius: 5,
+    fontFamily:' ArimaMadurai_500Medium',
     fontSize: 16,
     paddingLeft:15,
     paddingRight: 15,

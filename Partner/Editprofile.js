@@ -1,21 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Image, ImageBackground, Button, TextInput, View, Text, ScrollView } from 'react-native';
 import { 
-  NunitoSans_200ExtraLight,
-  NunitoSans_200ExtraLight_Italic,
-  NunitoSans_300Light,
-  NunitoSans_300Light_Italic,
-  NunitoSans_400Regular,
-  NunitoSans_400Regular_Italic,
-  NunitoSans_600SemiBold,
-  NunitoSans_600SemiBold_Italic,
-  NunitoSans_700Bold,
-  NunitoSans_700Bold_Italic,
-  NunitoSans_800ExtraBold,
-  NunitoSans_800ExtraBold_Italic,
-  NunitoSans_900Black,
-  NunitoSans_900Black_Italic 
-} from '@expo-google-fonts/nunito-sans'
+  ArimaMadurai_500Medium,
+} from '@expo-google-fonts/arima-madurai'
+
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 function Editprofile({ navigation }) {
     const [text, onChangeText] = React.useState(null);
@@ -23,7 +13,11 @@ function Editprofile({ navigation }) {
   const [Password, onChangePassword] = React.useState(null);
   const [Phone, onChangeNumber] = React.useState(null);
   const [Specialization, onChangespecial] = React.useState(null);
-
+  let {fontLoad } = useFonts(
+    {
+      ArimaMadurai_500Medium 
+    }
+  );
   return (
     <ScrollView >
     <View style={styles.container}>
@@ -76,7 +70,7 @@ function Editprofile({ navigation }) {
           <TouchableOpacity
             style={styles.button}
           >
-            <Text style={{ color: 'white', fontSize: 26,letterSpacing: 1  }}>Save</Text>
+            <Text style={{ color: 'white', fontSize: 20,letterSpacing: 1  }}>Save</Text>
           </TouchableOpacity>
         </View>
      
@@ -85,55 +79,63 @@ function Editprofile({ navigation }) {
   )
 }
 const styles = {
-    container: {
-      flex: 1,
-    },
-    ancer:{ 
-      fontSize:25
-    },
-    image: {
-      flex: 1,
-      justifyContent: "center",
-    },
-    tinyLogo: {
-      height: 70,
-      width: 270
-    },
-    button: {
-      alignItems: "center",
-      backgroundColor: "#337ab7",
-      padding: 17,
-      height: 67,
-      marginTop: 24,
-      
-    },
-    bodytext: {
-      fontSize: 29,
-      marginTop: 48,
-      textAlign: 'center',
-      color:'#000000',
-      letterSpacing: 2
-    },
-    forget: {
-      textAlign: 'center',
-      letterSpacing: 2
-    },
-    input: {
-      height: 56,
-      marginVertical: 12,
-      borderColor: 'white',
-      fontSize: 26,
-      textAlign: 'center',
-      color: 'black',
-      backgroundColor: 'white',
-      padding: 10,
-      shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowColor: '#171717',
-    },
-    overlay: {
-      flex: 1,
-      padding: 30,
-    }
-  };
+  container: {
+    flex: 1,
+  },
+  ancer:{
+   
+    fontSize:25
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  tinyLogo: {
+    height: 129,
+    width: 183
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#32407a",
+    padding: 11,
+    height: 51,
+    borderRadius: 5,
+    marginTop: 24
+  },
+  bodytext: {
+    fontSize: 25,
+    marginTop: 10,
+    marginBottom:18,
+    textAlign: 'center',
+    color:'#2e3d78',
+    fontWeight: 800,
+    letterSpacing: 2,
+    fontFamily:' ArimaMadurai_500Medium'
+  },
+  forget: {
+    textAlign: 'center',
+    letterSpacing: 2
+  },
+  input: {
+    height: 40,
+    marginVertical: 12,
+    borderColor: 'black',
+    borderWidth:1,
+    borderRadius: 5,
+    fontSize: 16,
+    textAlign: 'left',
+    color: 'black',
+    backgroundColor: 'white',
+    padding: 10,
+    fontFamily:' ArimaMadurai_500Medium'
+    
+  },
+  overlay: {
+    flex: 1,
+   paddingTop: 50,
+   paddingBottom:50,
+  backgroundColor:'#ffff',
+  padding:25
+  }
+};
 export default Editprofile

@@ -1,25 +1,19 @@
 import React from 'react'
-import { View } from 'react-native'
 import { 
-  NunitoSans_200ExtraLight,
-  NunitoSans_200ExtraLight_Italic,
-  NunitoSans_300Light,
-  NunitoSans_300Light_Italic,
-  NunitoSans_400Regular,
-  NunitoSans_400Regular_Italic,
-  NunitoSans_600SemiBold,
-  NunitoSans_600SemiBold_Italic,
-  NunitoSans_700Bold,
-  NunitoSans_700Bold_Italic,
-  NunitoSans_800ExtraBold,
-  NunitoSans_800ExtraBold_Italic,
-  NunitoSans_900Black,
-  NunitoSans_900Black_Italic 
-} from '@expo-google-fonts/nunito-sans'
+  ArimaMadurai_500Medium,
+} from '@expo-google-fonts/arima-madurai'
+
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
 import { View,Image, Text, ScrollView } from 'react-native'
 
 function Complete({ navigation }) {
-
+  let {fontLoad } = useFonts(
+    {
+      ArimaMadurai_500Medium 
+    }
+  );
   return (
     <ScrollView >
     <View style={styles.container}>
@@ -87,7 +81,8 @@ function Complete({ navigation }) {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor:'white'
+    backgroundColor:'white',
+    fontFamily:' ArimaMadurai_500Medium'
   },
   row: { 
     flexDirection: "row",
@@ -96,6 +91,7 @@ const styles = {
   marginBottom :10,
   marginTop:10,
   borderRadius:6,
+  fontFamily:' ArimaMadurai_500Medium',
   padding:10,
   shadowColor: '#171717',
   shadowOffset: {width: -2, height: 4},
@@ -115,15 +111,18 @@ const styles = {
   ordertext:{
     fontSize:17,
     color:'#6d6d6d',
+    fontFamily:' ArimaMadurai_500Medium'
   },
   order: {
     marginBottom:10,
     fontSize:20,
+    fontFamily:' ArimaMadurai_500Medium'
   },
   header: {
     fontSize:30,
     padding:17,
     textAlign:'center',
+    fontFamily:' ArimaMadurai_500Medium'
   }
 }
 export default Complete

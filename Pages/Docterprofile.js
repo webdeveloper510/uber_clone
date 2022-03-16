@@ -2,32 +2,28 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Entypo';
 import { ScrollView, Image, View, Text } from 'react-native';
 import { 
-  NunitoSans_200ExtraLight,
-  NunitoSans_200ExtraLight_Italic,
-  NunitoSans_300Light,
-  NunitoSans_300Light_Italic,
-  NunitoSans_400Regular,
-  NunitoSans_400Regular_Italic,
-  NunitoSans_600SemiBold,
-  NunitoSans_600SemiBold_Italic,
-  NunitoSans_700Bold,
-  NunitoSans_700Bold_Italic,
-  NunitoSans_800ExtraBold,
-  NunitoSans_800ExtraBold_Italic,
-  NunitoSans_900Black,
-  NunitoSans_900Black_Italic 
-} from '@expo-google-fonts/nunito-sans'
+  ArimaMadurai_500Medium,
+} from '@expo-google-fonts/arima-madurai'
+
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
 const myIcon = <Icon name="star" size={30} color="#cddc39" />;
 
 function Docterprofile(navigation) {
+  let {fontLoad } = useFonts(
+    {
+      ArimaMadurai_500Medium 
+    }
+  );
   return (
     <ScrollView>
   <View style={styles.container}>
          <View style={styles.row}>
              <View style={styles.col}>
-                  <Text style={{color:'white',}}> Dr. Brayden Trump</Text>
-                  <Text style={{color:'white', marginVertical: 10}}>Pediatrician</Text>
-                  <Text style={{color:'white'}}>{myIcon} 4.76 Rating</Text>
+                  <Text style={{color:'white', fontFamily:' ArimaMadurai_500Medium'}}> Dr. Brayden Trump</Text>
+                  <Text style={{color:'white', marginVertical: 10,  fontFamily:' ArimaMadurai_500Medium'}}>Pediatrician</Text>
+                  <Text style={{color:'white',  fontFamily:' ArimaMadurai_500Medium'}}>{myIcon} 4.76 Rating</Text>
                  </View>
                  <View style={styles.col1}>
                      <Image 
@@ -71,10 +67,12 @@ const styles = {
      fontSize:21,
      fontWeight:'700',
      marginTop:15,
-     marginBottom:10
+     marginBottom:10,
+     fontFamily:' ArimaMadurai_500Medium'
     },
     lorem: {
       fontSize:19,
+      fontFamily:' ArimaMadurai_500Medium'
     },
     map:{
       height:200,
